@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">eventapprentice</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="new_event">Create a new event</string>
+    <string name="existing_event">Open an existing event</string>
+    <string name="title_activity_create_new_event">Create New Event</string>
+    <string name="event_theme">Enter a theme for the event</string>
+    <string name="date_picker">Enter the date of the event</string>
+
+</resources>
