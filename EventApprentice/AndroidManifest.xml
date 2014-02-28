@@ -26,6 +26,14 @@
             android:name="com.example.eventapprentice.CreateNewEvent"
             android:label="@string/title_activity_create_new_event" >
         </activity>
+        <activity
+            android:name="com.example.eventapprentice.ImportGuestList"
+            android:label="@string/title_activity_import_guest_list"
+            android:parentActivityName="com.example.eventapprentice.CreateNewEvent" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.eventapprentice.CreateNewEvent" />
+        </activity>
     </application>
 
 </manifest>

@@ -9,5 +9,7 @@
     <string name="title_activity_create_new_event">Create New Event</string>
     <string name="event_theme">Enter a theme for the event</string>
     <string name="date_picker">Enter the date of the event</string>
+    <string name="createNewEvent">Create New Event</string>
+    <string name="title_activity_import_guest_list">ImportGuestList</string>
 
 </resources>

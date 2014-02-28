@@ -4,13 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import com.example.eventapprentice.R;
-import com.example.eventapprentice.R.id;
-import com.example.eventapprentice.R.layout;
-import com.example.eventapprentice.R.menu;
-
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -19,6 +15,8 @@ import android.widget.EditText;
 
 public class CreateNewEvent extends Activity {
 
+	public final static String THEME = "com.example.eventapprentice.THEME";
+	public final static String DATE = "com.example.eventapprentice.DATE";
 	Calendar myCalendar = Calendar.getInstance();
 	EditText selectDate;
 
@@ -65,4 +63,14 @@ public class CreateNewEvent extends Activity {
 		return true;
 	}
 
+	public void createNewEvent(View view) {
+		Intent intent = new Intent(this, ImportGuestList.class);
+		EditText editText = (EditText) findViewById(R.id.event_theme);
+		String message = editText.getText().toString();
+		intent.putExtra(THEME, message);
+		editText = (EditText) findViewById(R.id.date_picker);
+		message = editText.getText().toString();
+		intent.putExtra(DATE, message);
+		startActivity(intent);
+	}
 }
