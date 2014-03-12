@@ -27,6 +27,14 @@
         android:textSize="25sp"
         android:hint="@string/date_picker" />
     
+    <EditText
+        android:id="@+id/event_location"
+        android:layout_marginTop="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:hint="@string/event_location" />
+    
     <Button
         android:id="@+id/submit_event"
         android:layout_width="wrap_content"

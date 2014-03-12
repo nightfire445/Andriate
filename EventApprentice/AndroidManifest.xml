@@ -34,6 +34,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.eventapprentice.CreateNewEvent" />
         </activity>
+        <activity
+            android:name="com.example.eventapprentice.GetExistingEvents"
+            android:label="@string/title_activity_get_existing_events" >
+        </activity>
+        <activity
+            android:name="com.example.eventapprentice.ListExistingEvents"
+            android:label="@string/title_activity_list_existing_events"
+            android:parentActivityName="com.example.eventapprentice.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.eventapprentice.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

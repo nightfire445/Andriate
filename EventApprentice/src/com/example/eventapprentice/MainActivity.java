@@ -1,9 +1,6 @@
 package com.example.eventapprentice;
 
 import com.example.eventapprentice.R;
-import com.example.eventapprentice.R.layout;
-import com.example.eventapprentice.R.menu;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +24,11 @@ public class MainActivity extends Activity {
 
 	public void newEvent(View view) {
 		Intent intent = new Intent(this, CreateNewEvent.class);
+		startActivity(intent);
+	}
+	
+	public void getExistingEvents(View view) {
+		Intent intent = new Intent(this, ListExistingEvents.class);
 		startActivity(intent);
 	}
 

@@ -37,6 +37,27 @@
         android:layout_marginBottom="26dp"
         android:onClick="existingEvent"
         android:src="@drawable/ic_action_view_as_list" />
+        android:textSize="45sp"
+        android:text="@string/new_event" />
+    
+    <ImageButton 
+        android:id="@+id/newManualEvent"
+        android:layout_below="@id/new_event"
+        
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_action_new_event" 
+        android:onClick="newEvent"/>
+    
+    <ImageButton 
+        android:layout_toRightOf="@id/newManualEvent"
+        android:layout_below="@id/new_event"
+        android:layout_centerHorizontal="true"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/com_facebook_inverse_icon" 
+        android:onClick="importFBEvent"/>
+
 
     <TextView
         android:id="@+id/existing_event"
@@ -47,5 +68,9 @@
         android:layout_marginBottom="24dp"
         android:text="@string/existing_event"
         android:textSize="45sp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_view_as_list" 
+        android:onClick="getExistingEvents"/>
 
 </RelativeLayout>

@@ -1,17 +1,18 @@
 package com.example.eventapprentice;
 
-import java.util.Date;
-
 
 public class Event {
 	String theme;
-	Date date;
+	String date;
+	String location;
 	
+
 	public Event(){}
 	
-	public Event(String theme, Date date) {
+	public Event(String theme, String date, String location) {
 		this.theme = theme;
 		this.date = date;
+		this.location = location;
 	}
 
 	public String getTheme() {
@@ -22,12 +23,19 @@ public class Event {
 		this.theme = theme;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
-	
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
 }

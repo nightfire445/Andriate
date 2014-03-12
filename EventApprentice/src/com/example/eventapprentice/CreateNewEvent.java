@@ -17,6 +17,7 @@ public class CreateNewEvent extends Activity {
 
 	public final static String THEME = "com.example.eventapprentice.THEME";
 	public final static String DATE = "com.example.eventapprentice.DATE";
+	public final static String LOCATION = "com.example.eventapprentice.LOCATION";
 	Calendar myCalendar = Calendar.getInstance();
 	EditText selectDate;
 
@@ -71,6 +72,9 @@ public class CreateNewEvent extends Activity {
 		editText = (EditText) findViewById(R.id.date_picker);
 		message = editText.getText().toString();
 		intent.putExtra(DATE, message);
+		editText = (EditText) findViewById(R.id.event_location);
+		message = editText.getText().toString();
+		intent.putExtra(LOCATION, message);
 		startActivity(intent);
 	}
 }

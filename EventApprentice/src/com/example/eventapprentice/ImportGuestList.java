@@ -1,9 +1,6 @@
 package com.example.eventapprentice;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import com.example.eventapprentice.FeedEventContract.FeedEvent;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -30,21 +27,17 @@ public class ImportGuestList extends Activity {
 		Intent intent = getIntent();
 		String theme = intent.getStringExtra(CreateNewEvent.THEME);
 		String date = intent.getStringExtra(CreateNewEvent.DATE);
-		Date date1 = null;
-		try {
-			date1 = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH).parse(date);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		java.sql.Date sqlDate = new java.sql.Date(date1.getTime());
-		Event newEvent = new Event(theme, sqlDate);
+		String location = intent.getStringExtra(CreateNewEvent.LOCATION);
+		Event newEvent = new Event(theme, date, location);
 		MySQLiteHelper DbHelper = new MySQLiteHelper(this);
 		SQLiteDatabase db = DbHelper.getWritableDatabase();
 		ContentValues values = new ContentValues();
-		values.put("name", newEvent.getTheme());
-		//Manually enter date value, need to lookup SQL statement
-		db.insert(MySQLiteHelper.TABLE_EVENT, null, values);
+		values.put(FeedEvent.COLUMN_NAME_THEME, newEvent.getTheme());
+		values.put(FeedEvent.COLUMN_NAME_DATE, newEvent.getDate());
+		values.putNull(FeedEvent.COLUMN_NAME_GUESTS);
+		values.put(FeedEvent.COLUMN_NAME_LOCATION, newEvent.getLocation());
+		db.insert(FeedEvent.TABLE_EVENT, null, values);
+		db.close();
 		
 		
 	}
