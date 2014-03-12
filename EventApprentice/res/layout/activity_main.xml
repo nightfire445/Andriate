@@ -9,37 +9,43 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:layout_marginTop="20dp"
         android:id="@+id/new_event"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="45sp"
-        android:text="@string/new_event" />
-    
-    <ImageButton 
-        android:layout_below="@id/new_event"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:text="@string/new_event"
+        android:textSize="45sp" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_action_new_event" 
-        android:onClick="newEvent"/>
+        android:layout_below="@+id/new_event"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:onClick="newEvent"
+        android:src="@drawable/ic_action_new_event" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        android:onClick="existingEvent"
+        android:src="@drawable/ic_action_view_as_list" />
 
     <TextView
         android:id="@+id/existing_event"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="45sp"
-        android:text="@string/existing_event" />
-    
-     <ImageButton 
-        android:layout_below="@id/existing_event"
+        android:layout_above="@+id/imageButton2"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_action_view_as_list" 
-        android:onClick="existingEvent"/>
+        android:layout_marginBottom="24dp"
+        android:text="@string/existing_event"
+        android:textSize="45sp" />
 
 </RelativeLayout>
