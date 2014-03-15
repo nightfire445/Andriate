@@ -15,5 +15,8 @@
     <string name="title_activity_import_guest_list">ImportGuestList</string>
     <string name="title_activity_get_existing_events">GetExistingEvents</string>
     <string name="title_activity_list_existing_events">ListExistingEvents</string>
+    <string name="app_id">474427245995544</string>
+    <string name="fbWarning">Facebook Login Required</string>
+    <string name="accept">OK</string>
 
 </resources>
