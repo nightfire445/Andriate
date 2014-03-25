@@ -45,15 +45,6 @@
             android:onClick="importFBEvent"
             android:src="@drawable/com_facebook_inverse_icon" />
 
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/textView1"
-            android:layout_below="@+id/textView1"
-            android:layout_marginRight="23dp"
-            android:src="@drawable/ic_action_new_event" />
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -70,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
-            android:onClick="existingEvent"
+            android:onClick="getExistingEvents"
             android:src="@drawable/ic_action_view_as_list" />
 
     </RelativeLayout>
