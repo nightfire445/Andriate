@@ -1,19 +1,37 @@
 package com.example.eventapprentice;
 
-import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
+import android.widget.ListView;
 
 public class ListExistingEvents extends Activity {
+	
+    private MySQLiteHelper mHelper;
+    private SQLiteDatabase dataBase;
+
+    private ArrayList<String> userId = new ArrayList<String>();
+    private ArrayList<String> user_fName = new ArrayList<String>();
+    private ArrayList<String> user_lName = new ArrayList<String>();
+    private ListView userList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_list_existing_events);
+		setContentView(R.layout.activity_get_existing_events);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		mHelper = new MySQLiteHelper(this);
+		userList = (ListView) findViewById(R.id.List);
+		if(userList==null) Log.i("NULL","NULL");
+		displayData();
 	}
 
 	/**
@@ -24,7 +42,14 @@ public class ListExistingEvents extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 	}
-
+	
+    @Override
+    protected void onResume() {
+    	super.onResume();
+        
+    }
+    
+    
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -48,5 +73,16 @@ public class ListExistingEvents extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
+	
+	private void displayData() {
+		 List<Event> allEvents = mHelper.getAllEvent();
+		 for(Event event:allEvents) {
+			 userId.add(event.getTheme());
+			 user_fName.add(event.getLocation());
+			 user_lName.add(event.getDate());
+		 }
+		 
+		 DisplayAdapter disadpt = new DisplayAdapter(ListExistingEvents.this,userId, user_fName, user_lName);
+	     userList.setAdapter(disadpt);
+	    }
 }

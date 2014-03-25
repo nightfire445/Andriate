@@ -77,7 +77,7 @@ public class MainFragment extends Fragment{
 		View view = inflater.inflate(R.layout.main, container, false);
 		LoginButton authButton = (LoginButton) view.findViewById(R.id.loginButton1);
 		authButton.setFragment(this);
-		authButton.setReadPermissions(Arrays.asList("basic_info","user_events", "friend_events"));
+		authButton.setReadPermissions(Arrays.asList("basic_info","user_events"));
 		return view;
 	}
 	
