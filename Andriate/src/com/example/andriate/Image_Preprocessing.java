@@ -1,3 +1,5 @@
+package com.example.andriate;
+
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -9,10 +11,10 @@ import org.opencv.imgproc.*;
 import org.opencv.core.*;
 import org.opencv.core.Core.MinMaxLocResult;
 
-import java.awt.image.*;
-import java.awt.Graphics2D;
+//import java.awt.image.*;
+//import java.awt.Graphics2D;
 
-import javax.imageio.*;
+//import javax.imageio.*;
 
 import java.io.File;
 import java.util.*;
@@ -111,7 +113,7 @@ class Image_Preprocessing {
 		return warp_dst;
 	}
 	
-	public static Mat Convert_to_Binary(Mat source) {
+	public Mat Convert_to_Binary(Mat source) {
 		Mat binary = new Mat(source.rows(), source.cols(), source.type());
 		Imgproc.threshold(source, binary, 0, 255, Imgproc.THRESH_OTSU);
 		return binary;
@@ -177,12 +179,12 @@ class Image_Preprocessing {
 	public static void main(String[] args) {
 		
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-		
+		/*
 		try {
 			
 			//Read in picture and create new matrices
-			BufferedImage original = ImageIO.read(new File("src/sample6.jpg"));
-			ImageIO.write(original, "png", new File("src/phone2.png"));
+			//BufferedImage original = ImageIO.read(new File("src/sample6.jpg"));
+			//ImageIO.write(original, "png", new File("src/phone2.png"));
 			Mat source = Highgui.imread("src/phone2.png", Highgui.CV_LOAD_IMAGE_GRAYSCALE);
 			Mat binary = Convert_to_Binary(source);
 			Core.bitwise_not(binary, binary);
@@ -241,6 +243,8 @@ class Image_Preprocessing {
 			System.out.println("Fail");
 		}
 	}		
+	*/
+	}
 }
 
 
