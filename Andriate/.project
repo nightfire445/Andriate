@@ -3,6 +3,8 @@
 	<name>Andriate</name>
 	<comment></comment>
 	<projects>
+		<project>appcompat_v7</project>
+		<project>OpenCV Library - 2.4.9</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
