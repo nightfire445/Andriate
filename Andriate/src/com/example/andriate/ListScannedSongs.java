@@ -3,6 +3,8 @@ package com.example.andriate;
 import java.util.ArrayList;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
@@ -37,11 +39,10 @@ public class ListScannedSongs extends Activity{
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View v,
 							int position, long arg3) {
+						MediaPlayer player;
 						String selectedSong = songTitleList.get(position);
-						String path = mHelper.getPath(selectedSong);
-						Toast.makeText(getApplicationContext(), "File Path: "+path, Toast.LENGTH_LONG).show();
-						//^INSERT MEDIA PLAYER INSTEAD OF TOAST//
-						
+						player = MediaPlayer.create(ListScannedSongs.this, Uri.parse(mHelper.getPath(selectedSong)));
+						player.start();
 					}
                 	
                 });

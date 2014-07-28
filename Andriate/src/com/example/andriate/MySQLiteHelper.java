@@ -58,10 +58,19 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	  public String getPath(String title){
 		  String path = null;
 		  SQLiteDatabase db = this.getReadableDatabase();
-		  Cursor cursor = db.query(FeedSong.TABLE_SONG, new String[]{FeedSong.COLUMN_NAME_PATH}, FeedSong.COLUMN_NAME_TITLE +"=?", 
-				  new String[] {title}, "NULL", "NULL", "NULL");
-		  if(cursor.moveToFirst())
+		  Cursor cursor = db.query(
+				  FeedSong.TABLE_SONG,
+				  new String[]{FeedSong.COLUMN_NAME_PATH}, 
+				  FeedSong.COLUMN_NAME_TITLE +" = ?",
+				  new String[] {title}, 
+				  null, 
+				  null, 
+				  null,
+				  null);
+		  if(cursor != null){
+			  cursor.moveToPosition(0);
 			  path = cursor.getString(0);
+		  }
 		  else
 			  Log.d("ERROR", "No File Found in DB");
 		  return path;
