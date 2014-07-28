@@ -195,7 +195,7 @@ class Image_Preprocessing {
 		return warp_dst;
 	}
 	
-	public Mat Convert_to_Binary(Mat source) {
+	public static Mat Convert_to_Binary(Mat source) {
 		Mat binary = new Mat(source.rows(), source.cols(), source.type());
 		Imgproc.threshold(source, binary, 0, 255, Imgproc.THRESH_OTSU);
 		return binary;
@@ -367,13 +367,10 @@ class Image_Preprocessing {
 		try {
 			
 			//Read in picture and create new matrices
-<<<<<<< HEAD
 			BufferedImage original = ImageIO.read(new File("src/below_staff_test3.jpg"));
 			ImageIO.write(original, "png", new File("src/phone2.png"));
-=======
 			//BufferedImage original = ImageIO.read(new File("src/sample6.jpg"));
 			//ImageIO.write(original, "png", new File("src/phone2.png"));
->>>>>>> 7090d705c54a839fcc77397532a8381babf2b0b1
 			Mat source = Highgui.imread("src/phone2.png", Highgui.CV_LOAD_IMAGE_GRAYSCALE);
 			Mat binary = Convert_to_Binary(source);
 			Core.bitwise_not(binary, binary);			
@@ -503,7 +500,7 @@ class Image_Preprocessing {
 			
 			Mat new_houghlines = new Mat(binary.rows(), binary.cols(), binary.type());
 			
-			Draw_Lines(new_edges, houghlines_dst);*/
+			Draw_Lines(new_edges, houghlines_dst);
 			
 			Highgui.imwrite("src/new_measure9.jpg", notes_only);
 			
